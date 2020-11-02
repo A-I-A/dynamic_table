@@ -1,0 +1,6 @@
+.form_wrapper{
+    display: flex;
+    flex-direction: column;
+    width : 250px;
+    border: 1px solid gray;
+}
