@@ -18,7 +18,7 @@ const Table =({data, columns ,deleteRow})=>{
  }
 
  const TableBody=({rows,columns,deleteRow})=>{
-    let ejectColumnValues= columns.map(el=>{return el.id});
+    let ejectColumnValues= columns.map(el=>{return el.field});
     return(
        <tbody>{rows.map(el=>{return <TableRow row={el} columns={ejectColumnValues} deleteRow={deleteRow}/>})}</tbody>
     )

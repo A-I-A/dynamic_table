@@ -1,6 +1,10 @@
 .form_wrapper{
     display: flex;
     flex-direction: column;
-    width : 250px;
+    width : 300px;
     border: 1px solid gray;
+}
+
+.input_label{
+    width:100px;
 }
