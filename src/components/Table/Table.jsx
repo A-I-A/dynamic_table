@@ -11,24 +11,24 @@ const Table =({data, columns ,deleteRow})=>{
 
  const TableHeader=({columns})=>{
     return(
-       <thead>
-          {columns.map(key=>{return  <TableCell value={key.text}/>})}
-       </thead>
+      <thead><tr>
+          {columns.map(el=>{return  <TableCell key={el.field} value={el.text}/>})}
+       </tr></thead>
     )
  }
 
  const TableBody=({rows,columns,deleteRow})=>{
     let ejectColumnValues= columns.map(el=>{return el.field});
     return(
-       <tbody>{rows.map(el=>{return <TableRow row={el} columns={ejectColumnValues} deleteRow={deleteRow}/>})}</tbody>
+       <tbody>{rows.map(el=>{return <TableRow key={el.id} row={el} columns={ejectColumnValues} deleteRow={deleteRow}/>})}</tbody>
     )
  }
 
  const TableRow=({row, columns,deleteRow})=>{
     return(
        <tr>
-          {columns.map(key=>{
-             return <TableCell value={row[key]}/>})}
+          {columns.map(el=>{
+             return <TableCell key={el} value={row[el]}/>})}
        <td><button onClick={()=>{deleteRow(row.id)}}>-</button></td>
        </tr>
     )
